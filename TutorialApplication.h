@@ -14,23 +14,31 @@ This source file is part of the
       http://www.ogre3d.org/tikiwiki/
 -----------------------------------------------------------------------------
 */
-#ifndef __TutorialApplication_h_
-#define __TutorialApplication_h_
+#include <Terrain/OgreTerrain.h>
+#include <Terrain/OgreTerrainGroup.h>
 
 #include "BaseApplication.h"
 
 class TutorialApplication : public BaseApplication
 {
 public:
-    TutorialApplication(void);
-    virtual ~TutorialApplication(void);
+    TutorialApplication();
+    virtual ~TutorialApplication();
 
 protected:
-    virtual void createScene(void);
+    virtual void createScene();
+    virtual void createFrameListener();
+    virtual void destroyScene();
+    virtual bool frameRenderingQueued(const Ogre::FrameEvent& fe);
 
-    virtual void createCamera();
-    virtual void createViewports();
+private:
+    void defineTerrain(long x, long y);
+    void initBlendMaps(Ogre::Terrain* terrain);
+    void configureTerrainDefaults(Ogre::Light* light);
+
+    bool mTerrainsImported;
+    Ogre::TerrainGroup* mTerrainGroup;
+    Ogre::TerrainGlobalOptions* mTerrainGlobals;
+    OgreBites::Label* mInfoLabel;
+
 };
-
-
-#endif // #ifndef __TutorialApplication_h_
