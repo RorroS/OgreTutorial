@@ -77,6 +77,28 @@ void TutorialApplication::createScene() {
     }
 
     mTerrainGroup->freeTemporaryResources();
+
+    Ogre::Entity* ogreHead = mSceneMgr->createEntity("ogrehead.mesh");
+    Ogre::Entity* ogreHead1 = mSceneMgr->createEntity("ogrehead.mesh");
+    Ogre::Entity* ogreHead2 = mSceneMgr->createEntity("ogrehead.mesh");
+    Ogre::Entity* ogreHead3 = mSceneMgr->createEntity("ogrehead.mesh");
+    Ogre::SceneNode* headNode = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+    Ogre::SceneNode* headNode1 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+    Ogre::SceneNode* headNode2 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+    Ogre::SceneNode* headNode3 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+    headNode->attachObject(ogreHead);
+    headNode1->attachObject(ogreHead1);
+    headNode2->attachObject(ogreHead2);
+    headNode3->attachObject(ogreHead3);
+    headNode->setScale(10,10,10);
+    headNode1->setScale(7,7,7);
+    headNode2->setScale(4,4,4);
+    headNode3->setScale(1,1,1);
+    headNode->setPosition(1683, 200, 2116);
+    headNode1->setPosition(1683, 500, 2116);
+    headNode2->setPosition(1683, 1000, 2116);
+    headNode3->setPosition(1683, 1500, 2116);
+
 }
 
 void TutorialApplication::createFrameListener() {
