@@ -95,9 +95,9 @@ void TutorialApplication::createScene() {
     headNode2->setScale(4,4,4);
     headNode3->setScale(1,1,1);
     headNode->setPosition(1683, 200, 2116);
-    headNode1->setPosition(1683, 500, 2116);
-    headNode2->setPosition(1683, 1000, 2116);
-    headNode3->setPosition(1683, 1500, 2116);
+    headNode1->setPosition(1683, 580, 2050);
+    headNode2->setPosition(1683, 830, 2020);
+    headNode3->setPosition(1683, 950, 2000);
 
 }
 
